@@ -55,15 +55,3 @@ private:
   int top;
 }; 
 
-#ifndef CONTEST 
-int main() { 
-  stack<int> s(10);
-  cout << s <<endl;
-  s.push(42);
-  cout << "s has one element: " << s << endl;
-  s.push(17);
-  s.push(34);
-  cout <<"s has more elements: " << s << endl;
-  cout << "How many? " << s.size() << endl;
-  }
-#endif
