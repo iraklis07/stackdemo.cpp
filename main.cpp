@@ -7,9 +7,10 @@ public:
   stack (int size) {
     data=new T[size];
     top=0;
+    stacksize=size;
   }
   stack (const stack &s) { 
-    data=new T[s.top+1];
+    data=new T[s.stacksize];
     for(int i=0;i<s.top;i++) {
       data[i]=s.data[i];
     }
@@ -17,9 +18,10 @@ public:
   }
   ~stack () {
     delete [] data;
-    data=NULL;
   }
   const stack & operator = (const stack &s) {  
+    delete [] data;
+    data=new T[s.stacksize];
     for(int i=0;i<s.top;i++) {
       data[i]=s.data[i];
     }
@@ -53,5 +55,6 @@ public:
 private:  
   T *data;
   int top;
+  int stacksize;
 }; 
 
